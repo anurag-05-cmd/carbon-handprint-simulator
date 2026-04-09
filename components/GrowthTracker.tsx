@@ -86,13 +86,18 @@ export default function GrowthTracker({ totalCO2, evs }: GrowthTrackerProps) {
         </div>
 
         {/* Message */}
-        <div className="mt-6 p-3 rounded-lg backdrop-blur-sm bg-emerald-50/40 border border-emerald-200/40">
+        <motion.div
+          key={totalCO2 === 0 ? 'empty' : 'active'}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-6 p-3 rounded-lg backdrop-blur-sm bg-emerald-50/40 border border-emerald-200/40"
+        >
           <p className="text-xs text-slate-700 text-center">
             {totalCO2 === 0
               ? '✨ Start adding actions to track your impact!'
               : `🌍 You&apos;re making a real difference with your choices!`}
           </p>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

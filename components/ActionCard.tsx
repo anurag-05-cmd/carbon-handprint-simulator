@@ -106,10 +106,23 @@ export default function ActionCard({ action, onAdd }: ActionCardProps) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onAdd}
-          className={`w-full py-2.5 px-3 rounded-lg font-semibold text-sm text-white bg-emerald-600 border border-emerald-500 transition-all duration-200 flex items-center justify-center gap-2 ${colors.button} shadow-md hover:shadow-lg`}
+          className={`w-full py-2.5 px-3 rounded-lg font-semibold text-sm text-white bg-emerald-600 border border-emerald-500 transition-all duration-200 flex items-center justify-center gap-2 ${colors.button} shadow-md hover:shadow-lg relative overflow-hidden`}
         >
-          <Plus className="w-4 h-4" />
-          Add Action
+          {/* Pulse Ring Effect */}
+          <motion.div
+            className="absolute inset-0 rounded-lg border-2 border-emerald-400"
+            animate={{
+              scale: [1, 1.2],
+              opacity: [1, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeOut',
+            }}
+          />
+          <Plus className="w-4 h-4 relative z-10" />
+          <span className="relative z-10">Add Action</span>
         </motion.button>
       </div>
     </motion.div>

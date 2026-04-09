@@ -101,9 +101,22 @@ function ActionHistoryItem({
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: -20, scale: 0.95 }}
+      animate={{ 
+        opacity: 1, 
+        x: 0,
+        scale: 1,
+        boxShadow: [
+          '0 0 0 rgba(16, 185, 129, 0)',
+          '0 0 12px rgba(16, 185, 129, 0.3)',
+          '0 0 0 rgba(16, 185, 129, 0)',
+        ]
+      }}
       exit={{ opacity: 0, x: 20 }}
+      transition={{
+        layout: { type: 'spring', stiffness: 300, damping: 30 },
+        boxShadow: { duration: 0.6, ease: 'easeOut' },
+      }}
       className={`flex items-center justify-between p-3 rounded-lg backdrop-blur-sm border border-white/30 ${colorClass}`}
     >
       <div className="flex items-center gap-3 min-w-0">

@@ -8,12 +8,21 @@ export default function GrowthTreeSVG({ scale }: GrowthTreeSVGProps) {
   const normalizedScale = Math.max(0.5, Math.min(scale, 2));
 
   return (
-    <svg
+    <motion.svg
       width="120"
       height="160"
       viewBox="0 0 120 160"
       className="drop-shadow-lg"
       style={{ transformOrigin: 'center bottom' }}
+      animate={{
+        rotateZ: [0, -1.5, 1.5, -1, 1, 0],
+        rotateX: [0, 2, -2, 0],
+      }}
+      transition={{
+        duration: 6,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
     >
       {/* Trunk */}
       <motion.rect
@@ -122,13 +131,15 @@ export default function GrowthTreeSVG({ scale }: GrowthTreeSVGProps) {
         r="3"
         fill="#86efac"
         animate={{
-          r: [3, 4, 3],
-          opacity: [0.5, 1, 0.5],
+          r: [3, 5, 3],
+          opacity: [0.4, 1, 0.4],
+          y: [0, -4, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 2.5,
           repeat: Infinity,
-          delay: Math.random() * 2,
+          ease: 'easeInOut',
+          delay: 0,
         }}
       />
       <motion.circle
@@ -137,13 +148,15 @@ export default function GrowthTreeSVG({ scale }: GrowthTreeSVGProps) {
         r="3"
         fill="#86efac"
         animate={{
-          r: [3, 4, 3],
-          opacity: [0.5, 1, 0.5],
+          r: [3, 5, 3],
+          opacity: [0.4, 1, 0.4],
+          y: [0, -4, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 2.5,
           repeat: Infinity,
-          delay: Math.random() * 2,
+          ease: 'easeInOut',
+          delay: 0.6,
         }}
       />
       <motion.circle
@@ -152,15 +165,17 @@ export default function GrowthTreeSVG({ scale }: GrowthTreeSVGProps) {
         r="3"
         fill="#86efac"
         animate={{
-          r: [3, 4, 3],
-          opacity: [0.5, 1, 0.5],
+          r: [3, 5, 3],
+          opacity: [0.4, 1, 0.4],
+          y: [0, -4, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 2.5,
           repeat: Infinity,
-          delay: Math.random() * 2,
+          ease: 'easeInOut',
+          delay: 1.2,
         }}
       />
-    </svg>
+    </motion.svg>
   );
 }

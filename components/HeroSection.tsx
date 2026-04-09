@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Leaf } from 'lucide-react';
+import AnimatedFootprint from './AnimatedFootprint';
 
 interface HeroSectionProps {
   totalCO2: number;
@@ -16,6 +17,11 @@ export default function HeroSection({ totalCO2 }: HeroSectionProps) {
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-slate-400 rounded-full blur-3xl" />
+      </div>
+
+      {/* Animated Footprint Background */}
+      <div className="absolute top-4 right-8 opacity-10">
+        <AnimatedFootprint size={120} />
       </div>
 
       <div className="relative z-10">

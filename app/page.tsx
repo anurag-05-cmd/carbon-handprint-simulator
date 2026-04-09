@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatedBackground } from '@/components/AnimatedBackground';
 import HeroSection from '@/components/HeroSection';
 import ActionCards from '@/components/ActionCards';
 import GrowthTracker from '@/components/GrowthTracker';
@@ -101,20 +102,14 @@ export default function Home() {
     };
   };
 
-  if (!isHydrated) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-slate-50 to-sage-50 flex items-center justify-center">
-        <div className="text-slate-900">Loading...</div>
-      </div>
-    );
-  }
-
   const totalCO2 = calculateTotalCO2();
   const evs = calculateEVSMetaphors(totalCO2);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-slate-50 to-sage-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <main className="relative min-h-screen overflow-hidden">
+      <AnimatedBackground />
+      
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
