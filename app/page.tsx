@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedBackground } from '@/components/AnimatedBackground';
 import HeroSection from '@/components/HeroSection';
 import ActionCards from '@/components/ActionCards';
+import TreeGallery from '@/components/TreeGallery';
 import GrowthTracker from '@/components/GrowthTracker';
 import ActionHistory from '@/components/ActionHistory';
 
@@ -136,6 +137,11 @@ export default function Home() {
             <GrowthTracker totalCO2={totalCO2} evs={evs} />
             <ActionHistory actions={actions} onRemoveAction={removeAction} />
           </div>
+        </div>
+
+        {/* Full-Width Tree Gallery */}
+        <div className="mb-8">
+          <TreeGallery totalCO2={totalCO2} />
         </div>
       </div>
     </main>

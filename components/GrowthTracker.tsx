@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { TreePine, Droplets, TrendingUp } from 'lucide-react';
-import GrowthTreeSVG from './GrowthTreeSVG';
 
 interface EVSMetaphors {
   treeDays: string;
@@ -31,13 +30,8 @@ export default function GrowthTracker({ totalCO2, evs }: GrowthTrackerProps) {
       <div className="relative z-10">
         <h2 className="text-xl font-semibold text-slate-900 mb-6 flex items-center gap-2">
           <TreePine className="w-6 h-6 text-emerald-600" />
-          Growth Tracker
+          Environmental Equivalents
         </h2>
-
-        {/* Tree Visualization */}
-        <div className="mb-8 flex justify-center">
-          <GrowthTreeSVG scale={Math.min(totalCO2 / 20 + 0.5, 2)} />
-        </div>
 
         {/* Progress Bar */}
         <div className="mb-8">
