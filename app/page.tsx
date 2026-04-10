@@ -8,6 +8,7 @@ import ActionCards from '@/components/ActionCards';
 import TreeGallery from '@/components/TreeGallery';
 import GrowthTracker from '@/components/GrowthTracker';
 import ActionHistory from '@/components/ActionHistory';
+import Footer from '@/components/Footer';
 
 export interface CarbonAction {
   id: string;
@@ -144,6 +145,9 @@ export default function Home() {
           <TreeGallery totalCO2={totalCO2} />
         </div>
       </div>
+
+      {/* Footer with Credits */}
+      <Footer />
     </main>
   );
 }

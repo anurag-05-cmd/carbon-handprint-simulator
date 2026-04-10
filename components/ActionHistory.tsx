@@ -55,7 +55,7 @@ export default function ActionHistory({ actions, onRemoveAction }: ActionHistory
             className="text-center py-8"
           >
             <p className="text-sm text-slate-600">
-              No actions yet. Start by clicking &apos;Add Action&apos; above!
+              {"No actions yet. Start by clicking 'Add Action' above!"}
             </p>
           </motion.div>
         ) : (

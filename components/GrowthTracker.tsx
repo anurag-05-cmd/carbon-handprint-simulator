@@ -88,8 +88,8 @@ export default function GrowthTracker({ totalCO2, evs }: GrowthTrackerProps) {
         >
           <p className="text-xs text-slate-700 text-center">
             {totalCO2 === 0
-              ? '✨ Start adding actions to track your impact!'
-              : `🌍 You&apos;re making a real difference with your choices!`}
+              ? "✨ Start adding actions to track your impact!"
+              : "🌍 You're making a real difference with your choices!"}
           </p>
         </motion.div>
       </div>
