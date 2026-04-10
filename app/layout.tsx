@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
-import { Poppins, Merriweather, JetBrains_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, Crimson_Text, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _poppins = Poppins({ 
+const _plusjakarta = Plus_Jakarta_Sans({ 
   subsets: ["latin"],
   variable: '--font-sans',
-  weight: ['300', '400', '500', '600', '700']
+  weight: ['300', '400', '500', '600', '700', '800']
 });
 
-const _merriweather = Merriweather({ 
+const _crimson = Crimson_Text({ 
   subsets: ["latin"],
   variable: '--font-serif',
-  weight: ['300', '400', '700']
+  weight: ['400', '600']
 });
 
 const _jetbrains = JetBrains_Mono({ 
   subsets: ["latin"],
-  variable: '--font-mono'
+  variable: '--font-mono',
+  weight: ['400', '600']
 });
 
 export const metadata: Metadata = {
@@ -49,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${_poppins.variable} ${_merriweather.variable} ${_jetbrains.variable}`}>
+    <html lang="en" className={`${_plusjakarta.variable} ${_crimson.variable} ${_jetbrains.variable}`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

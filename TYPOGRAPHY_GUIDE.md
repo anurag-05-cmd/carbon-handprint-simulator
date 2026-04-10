@@ -1,39 +1,45 @@
-# Typography & Footer Enhancement Guide
+# Typography System - Premium Eco-Modern Design
 
-## Font Changes
+## Premium Font Stack
 
-The project now uses premium, modern fonts that provide a much more sophisticated and professional appearance compared to the generic Geist font family.
+The Carbon Handprint Simulator uses a carefully curated typography system featuring Plus Jakarta Sans, the font of choice for modern sustainability and eco-tech brands.
 
-### Font Stack
+### Font Stack Overview
 
-**Sans-Serif (Body Text & UI):** Poppins
-- A geometric, modern font perfect for interfaces and sustainability themes
-- Used for all body copy, buttons, cards, and general UI
-- Weights: 300 (Light), 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold)
-- Provides excellent readability and a contemporary feel
+**Sans-Serif (Body Text & UI):** Plus Jakarta Sans
+- **Why This Font?** Used by leading eco-tech and sustainability brands worldwide
+- Modern geometric design with subtle organic curves that evoke natural forms
+- Conveys innovation, balance, and environmental consciousness
+- Exceptional readability at all sizes and weights
+- Geometric precision suggests equilibrium and sustainability
+- Weights: 300 (Light), 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold), 800 (ExtraBold)
+- Used for all body copy, buttons, cards, navigation, and UI elements
 
-**Serif (Headings & Emphasis):** Merriweather
-- A traditional, warm serif font for headlines and emphasis
-- Adds sophistication and credibility to the project
-- Weights: 300 (Light), 400 (Regular), 700 (Bold)
-- Used in headings and decorative elements for contrast
+**Serif (Headings & Emphasis):** Crimson Text
+- **Why This Font?** Classical elegance with modern sensibility
+- Elegant, warm serif that adds literary quality to headings
+- Natural, earthy aesthetic that complements environmental themes
+- Exceptional pairing with Plus Jakarta Sans for visual hierarchy
+- Weights: 400 (Regular), 600 (SemiBold)
+- Used for page titles, section headings, and important callouts
 
 **Monospace (Code/Data):** JetBrains Mono
-- Professional monospace font for technical elements
-- Clean, modern appearance for data displays
-- Used in any code snippets or technical references
+- Professional monospace font for technical elements and data displays
+- Clean, modern appearance with excellent clarity
+- Weights: 400 (Regular), 600 (SemiBold)
+- Used in technical references and status indicators
 
 ### CSS Font Configuration
 
 ```css
 @theme inline {
-  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Merriweather', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Crimson Text', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 ```
 
-Fonts are loaded via Next.js Google Fonts with proper fallbacks for system fonts.
+All fonts are loaded via Next.js Google Fonts with proper system font fallbacks for reliability.
 
 ## Footer Enhancement
 
@@ -71,35 +77,72 @@ The footer now features a distinctive dark background for excellent visibility a
 - Accents: `bg-emerald-400`, `bg-emerald-500`, `text-emerald-400`
 - Dividers: `border-slate-700` with hover effects
 
-## Typography Usage Across Components
+## Design Philosophy
 
-### Headings
-- Main titles: Merriweather 700, large size, tracking-tight
-- Section headers: Poppins 600-700, uppercase with tracking-wide
-- Card titles: Poppins 600
+Plus Jakarta Sans has become the preferred font for environmental and sustainability-focused projects because it:
+
+1. **Sustainability Signal:** Recognized as the font of modern eco-tech brands
+2. **Visual Balance:** Geometric qualities suggest equilibrium and harmony with nature
+3. **Organic Warmth:** Subtle curves evoke natural forms without being whimsical
+4. **Professional Trust:** Modern yet timeless, conveying expertise and credibility
+5. **Global Readability:** Excellent across all sizes and digital platforms
+6. **Technical Clarity:** Clean letterforms work for data visualization and metrics
+
+The pairing with Crimson Text adds literary warmth and timeless elegance, creating a sophisticated, premium feel while maintaining the environmental focus.
+
+## Typography Hierarchy
+
+### Page & Section Titles
+- Font: Crimson Text 600
+- Size: 2.5rem (h1), 2rem (h2), tracking-tight
+- Usage: Main headings and important section titles
+
+### Card Headings
+- Font: Plus Jakarta Sans 700
+- Size: 1.25rem-1.5rem
+- Usage: Subsection titles and card headers
 
 ### Body Text
-- Default: Poppins 400, 14px-16px with leading-relaxed
-- Small text: Poppins 400, 12px-14px
-- Descriptions: Poppins 400-500, with good line-height
+- Font: Plus Jakarta Sans 400
+- Size: 1rem (16px) with line-height 1.5rem (24px)
+- Color: Slate-900 or slate-700 depending on context
+- Usage: Main content, descriptions, explanations
 
-### Buttons & Interactive Elements
-- Font: Poppins 500-600
-- Size: 14px-16px
-- Letter-spacing for emphasis on action buttons
+### Small Text & Labels
+- Font: Plus Jakarta Sans 400-500
+- Size: 0.875rem-0.75rem (14px-12px)
+- Usage: Labels, captions, metadata
+
+### Buttons & CTAs
+- Font: Plus Jakarta Sans 600-700
+- Size: 0.875rem-1rem (14px-16px)
+- Letter-spacing: 0.5px-1px
+- Usage: Action buttons, interactive elements
 
 ## Responsive Typography
 
-All fonts scale responsively:
-- Mobile: Base sizes with proper touch targets (minimum 44px height)
-- Tablet: Increased heading sizes for better hierarchy
-- Desktop: Full-size hierarchy with generous spacing
+All fonts scale responsively for optimal readability:
+- **Mobile:** Base sizes optimized for 16px minimum (accessibility standard)
+- **Tablet:** Increased heading sizes (md: breakpoint scaling)
+- **Desktop:** Full hierarchy with generous letter-spacing and line-height
 
-## Browser Compatibility
+Touch targets maintain minimum 44px height for accessibility.
 
-Fonts are served via Google Fonts with system fallbacks:
-- Poppins → system-ui, -apple-system, sans-serif
-- Merriweather → Georgia, serif
-- JetBrains Mono → monospace
+## Browser Compatibility & Performance
 
-Ensures proper rendering even if Google Fonts fails to load.
+Fonts are served via Google Fonts with intelligent fallbacks:
+- **Plus Jakarta Sans** → system-ui, -apple-system, sans-serif
+- **Crimson Text** → Georgia, serif
+- **JetBrains Mono** → monospace
+
+System fallbacks ensure proper rendering even if Google Fonts is unavailable, and Latin-subset loading optimizes performance with zero Cumulative Layout Shift (CLS).
+
+## Why This Typography Works for Environmental Design
+
+The combination of Plus Jakarta Sans and Crimson Text creates:
+- **Modern Appeal:** Contemporary feel that resonates with eco-conscious audiences
+- **Professional Credibility:** Sophisticated pairing trusted by sustainability brands
+- **Natural Warmth:** Subtle organic qualities align with environmental values
+- **Technical Clarity:** Excellent for displaying environmental metrics and data
+- **Global Accessibility:** Supports international audiences caring about climate action
+- **Timeless Quality:** Won't feel dated as sustainability movements evolve
